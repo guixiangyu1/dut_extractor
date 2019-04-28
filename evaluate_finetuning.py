@@ -1,7 +1,7 @@
 from model.data_utils import CoNLLDataset
 from model.ner_model import NERModel
 from model.config import Config
-
+import sys
 
 def align_data(data):
     """Given dict with lists, creates aligned strings
@@ -77,8 +77,17 @@ def main():
     model.restore_session(config.dir_model)
 
     # create dataset
-    test  = CoNLLDataset(config.filename_test, config.processing_word,
-                         config.processing_tag, config.max_iter)
+    if len(sys.argv) == 2:
+        if sys.argv[1] == 'test':
+            test = CoNLLDataset(config.filename_test, config.processing_word,
+                                config.processing_tag, config.max_iter)
+        elif sys.argv[1] == 'dev':
+            test = CoNLLDataset(config.filename_dev, config.processing_word,
+                                config.processing_tag, config.max_iter)
+    else:
+        assert len(sys.argv) == 1
+        test = CoNLLDataset(config.filename_test, config.processing_word,
+                            config.processing_tag, config.max_iter)
 
     # evaluate and interact
     model.evaluate(test)

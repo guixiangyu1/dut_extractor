@@ -90,10 +90,10 @@ class Config():
     dropout          = 0.5
     batch_size       = 50
     lr_method        = "adam"
-    lr               = 0.001
+    lr               = 0.01
     lr_decay         = 1.0
-    clip             = 5 # if negative, no clipping
-    nepoch_no_imprv  = 3
+    clip             = -5 # if negative, no clipping
+    nepoch_no_imprv  = 8
 
     # model hyperparameters
     hidden_size_char = 100 # lstm on chars

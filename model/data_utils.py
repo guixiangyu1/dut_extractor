@@ -185,7 +185,7 @@ def load_vocab(filename):
     """
     try:
         d = dict()
-        with open(filename) as f:
+        with open(filename, encoding='utf-8') as f:
             for idx, word in enumerate(f):
                 word = word.strip()      #若没有这个strip（），则每个词包含一个换行符
                 d[word] = idx

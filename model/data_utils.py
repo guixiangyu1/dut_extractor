@@ -59,7 +59,7 @@ class CoNLLDataset(object):
 
     def __iter__(self):
         niter = 0
-        with open(self.filename) as f:
+        with open(self.filename, encoding='utf-8') as f:
             words, tags = [], []
             for line in f:
                 line = line.strip()            #去掉前后的空格

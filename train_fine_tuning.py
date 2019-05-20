@@ -14,7 +14,7 @@ def main():
     config.lr               = 0.0001
     config.lr_decay         = 1.0
     config.clip             = -2.0 # if negative, no clipping
-    config.nepoch_no_imprv  = 3
+    config.nepoch_no_imprv  = 5
 
     config.dir_model = config.dir_output + "model.finetuning.weights/"
     

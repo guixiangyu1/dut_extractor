@@ -9,7 +9,7 @@ def main():
     config = Config()
     config.nepochs          = 200
     config.dropout          = 0.5
-    config.batch_size       = 10
+    config.batch_size       = 20
     config.lr_method        = "adam"
     config.lr               = 0.0001
     config.lr_decay         = 1.0
